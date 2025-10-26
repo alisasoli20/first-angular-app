@@ -2,16 +2,14 @@ import { Component, EventEmitter, input, Input, Output } from '@angular/core';
 
 import { DUMMY_USERS } from '../dummy-users';
 import { User } from './user.model';
-import { CardComponent } from "../shared/card/card";
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 @Component({
   selector: 'app-user',
-  standalone: true,
+  standalone: false,
   templateUrl: './user.html',
-  styleUrl: './user.css',
-  imports: [CardComponent]
+  styleUrl: './user.css'
 })
 export class UserComponent {
   @Input({required: true}) user!: User; 
